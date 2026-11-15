@@ -70,9 +70,12 @@ export default function CategoryPage() {
         <p className="text-sm text-gray-500 max-w-md">
           আপনি যে ক্যাটাগরি খুঁজছেন তা বিদ্যমান নয় অথবা লিংকটি ভুল রয়েছে।
         </p>
-        <Button as={Link} href="/" color="primary" className="bg-emerald-600 text-white font-semibold">
+        <Link
+          href="/"
+          className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-colors shadow-sm inline-block"
+        >
           হোম পেজে ফিরে যান
-        </Button>
+        </Link>
       </div>
     );
   }
@@ -87,7 +90,7 @@ export default function CategoryPage() {
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-6">
       <div className="max-w-6xl mx-auto space-y-8">
-        
+
         {/* হেডার ও সর্টিং কন্ট্রোল */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
           <div className="flex items-center gap-4">
@@ -128,8 +131,8 @@ export default function CategoryPage() {
           /* প্রোডাক্ট কার্ড গ্রিড */
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {sortedProducts.map((product) => (
-              <Link 
-                key={product.id} 
+              <Link
+                key={product.id}
                 href={`/product/${product.id}`}
                 className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow flex flex-col items-center text-center group"
               >

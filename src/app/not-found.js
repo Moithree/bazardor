@@ -10,9 +10,12 @@ export default function NotFound() {
       <p className="text-sm text-gray-500 max-w-md">
         আপনি যে পেজটি খুঁজছেন তা মুছে ফেলা হয়েছে অথবা লিংকটি ভুল রয়েছে।
       </p>
-      <Button as={Link} href="/" color="primary" className="bg-emerald-600 text-white font-semibold">
+      <Link
+        href="/"
+        className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-colors shadow-sm inline-block"
+      >
         হোম পেজে ফিরে যান
-      </Button>
+      </Link>
     </div>
   );
 }
