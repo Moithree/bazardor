@@ -1,11 +1,11 @@
 "use client";
-export const instant = false
-import React, { useState, useEffect } from "react";
+
+import React, { useState, useEffect, Suspense } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@heroui/react";
 
-export default function CategoryPage() {
+ function Category() {
   const { slug } = useParams();
   const [loading, setLoading] = useState(true);
   const [sortOrder, setSortOrder] = useState("default");
@@ -153,4 +153,12 @@ export default function CategoryPage() {
       </div>
     </div>
   );
+}
+export default function CategoryPage(){
+  return(
+    <Suspense fallback={<p>loading....</p>}>
+      <Category></Category>
+
+    </Suspense>
+  )
 }
